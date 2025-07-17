@@ -3,14 +3,27 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Buku Tamu BPS</title>
+  <title>Form Buku Tamu - BPS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border-radius: 16px;
+    }
+    .btn-custom {
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body class="bg-light">
+<body>
 
 <div class="container mt-5">
   <div class="card shadow p-4">
-    <h3 class="text-primary mb-4">Form Buku Tamu</h3>
+    <h3 class="text-primary mb-4"><i class="bi bi-journal-text"></i> Form Buku Tamu BPS</h3>
     <form action="simpan.php" method="POST">
 
       <div class="row">
@@ -83,7 +96,7 @@
             <option>TNI/POLRI/BIN/Kejaksaan</option>
             <option>Pemerintah Daerah</option>
             <option>Lembaga Internasional</option>
-            <option>Lembaga Penlitian & Pendidikan</option>
+            <option>Lembaga Penelitian & Pendidikan</option>
             <option>BUMN/BUMD</option>
             <option>Swasta</option>
             <option>Lainnya</option>
@@ -133,8 +146,20 @@
       <!-- Form Lanjutan -->
       <div id="form-lanjutan" class="mt-3"></div>
 
+      <!-- Tombol -->
       <hr>
-      <button type="submit" class="btn btn-primary">Simpan Data</button>
+      <div class="d-flex justify-content-between">
+        <a href="index.php" class="btn btn-secondary btn-custom">
+          <i class="bi bi-arrow-left-circle"></i> Kembali
+        </a>
+        <button type="submit" class="btn btn-primary btn-custom">
+          <i class="bi bi-save"></i> Simpan Data
+        </button>
+        <a href="lihat.php" class="btn btn-info text-white btn-custom">
+          <i class="bi bi-table"></i> Lihat Data
+        </a>
+      </div>
+
     </form>
   </div>
 </div>

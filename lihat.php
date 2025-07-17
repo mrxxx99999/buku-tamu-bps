@@ -10,7 +10,7 @@
 <div class="container mt-5">
   <div class="card shadow p-4">
     <h3 class="text-primary mb-4">Data Pengunjung</h3>
-    <a href="index.php" class="btn btn-secondary mb-3">Isi Form Lagi</a>
+    <a href="formbukutamu.php" class="btn btn-secondary mb-3">Isi Form Lagi</a>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
         <thead class="table-primary">
