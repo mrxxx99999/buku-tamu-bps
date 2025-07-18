@@ -64,69 +64,46 @@ $petugas = mysqli_fetch_assoc($queryPetugas);
       <div class="table-responsive">
         <table id="tamu" class="table table-bordered table-hover">
           <thead class="table-primary">
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>No. HP</th>
-              <th>Gender</th>
-              <th>Pendidikan</th>
-              <th>Pekerjaan</th>
-              <th>Instansi</th>
-              <th>Pemanfaatan</th>
-              <th>Layanan</th>
-              <th>Detail Layanan</th>
-              <th>Tanggal</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            $no = 1;
-            $query = mysqli_query($host, "SELECT * FROM tamu ORDER BY tanggal ASC");
-            while ($data = mysqli_fetch_array($query)) {
-              ?>
-              <tr>
-                <td><?= $no++ ?></td>
-                <td><?= htmlspecialchars($data['nama']) ?></td>
-                <td><?= htmlspecialchars($data['email']) ?></td>
-                <td><?= htmlspecialchars($data['hp']) ?></td>
-                <td><?= htmlspecialchars($data['gender']) ?></td>
-                <td><?= htmlspecialchars($data['pendidikan']) ?></td>
-                <td><?= htmlspecialchars($data['pekerjaan']) ?></td>
-                <td><?= htmlspecialchars($data['nama_instansi']) ?></td>
-                <td><?= htmlspecialchars($data['pemanfaatan']) ?></td>
-                <td><?= htmlspecialchars($data['layanan']) ?></td>
-                <td>
-                  <ul class="mb-0">
-                    <?php if (!empty($data['perpustakaan'])): ?>
-                      <li><strong>Perpustakaan:</strong> <?= htmlspecialchars($data['perpustakaan']) ?></li>
-                    <?php endif; ?>
-                    <?php if (!empty($data['permintaan_data'])): ?>
-                      <li><strong>Permintaan Data:</strong> <?= htmlspecialchars($data['permintaan_data']) ?></li>
-                    <?php endif; ?>
-                    <?php if (!empty($data['konsultasi'])): ?>
-                      <li><strong>Konsultasi Statistik:</strong> <?= htmlspecialchars($data['konsultasi']) ?></li>
-                    <?php endif; ?>
-                    <?php if (!empty($data['rekomendasi'])): ?>
-                      <li><strong>Rekomendasi Kegiatan:</strong> <?= htmlspecialchars($data['rekomendasi']) ?></li>
-                    <?php endif; ?>
-                  </ul>
-                </td>
-                <td><?= date('d-m-Y H:i', strtotime($data['tanggal'])) ?></td>
-                <td>
-                  <a href="edit.php?id=<?= $data['id'] ?>" class="btn btn-warning btn-sm">
-                    <i class="bi bi-pencil-square"></i> Edit
-                  </a>
-                  <a href="hapus.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?');">
-                    <i class="bi bi-trash"></i> Hapus
-                  </a>
-                </td>
-              </tr>
-              <?php
-            }
-            ?>
-          </tbody>
+  <tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Email</th>
+    <th>No. HP</th>
+    <th>Instansi</th>
+    <th>Layanan</th>
+    <th>Aksi</th>
+  </tr>
+</thead>
+<tbody>
+  <?php
+  $no = 1;
+  $query = mysqli_query($host, "SELECT * FROM tamu ORDER BY tanggal ASC");
+  while ($data = mysqli_fetch_array($query)) {
+    ?>
+    <tr>
+      <td><?= $no++ ?></td>
+      <td><?= htmlspecialchars($data['nama']) ?></td>
+      <td><?= htmlspecialchars($data['email']) ?></td>
+      <td><?= htmlspecialchars($data['hp']) ?></td>
+      <td><?= htmlspecialchars($data['nama_instansi']) ?></td>
+      <td><?= htmlspecialchars($data['layanan']) ?></td>
+      <td>
+        <a href="detail.php?id=<?= $data['id'] ?>" class="btn btn-info btn-sm">
+          <i class="bi bi-eye"></i> Detail
+        </a>
+        <a href="edit.php?id=<?= $data['id'] ?>" class="btn btn-warning btn-sm">
+          <i class="bi bi-pencil-square"></i>
+        </a>
+        <a href="hapus.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?');">
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
+    </tr>
+    <?php
+  }
+  ?>
+</tbody>
+
         </table>
       </div>
     </div>

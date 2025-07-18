@@ -140,7 +140,7 @@
       </div>
       <div class="form-check">
         <input type="checkbox" name="layanan[]" value="Rekomendasi" class="form-check-input" onclick="toggleLayanan()">
-        <label class="form-check-label">Rekomendasi Kegiatan Statistik</label>
+        <label class="form-check-label">Rekomendasi</label>
       </div>
 
       <!-- Form Lanjutan -->
